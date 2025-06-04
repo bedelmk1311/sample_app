@@ -36,6 +36,6 @@ class ListsController < ApplicationController
   # 保存できるカラムを限定する時に使う
   # ここではlistモデルのtitleとbodyの保存を許可する
   def list_params
-    params.require(:list).permit(:title, :body)
+    params.require(:list).permit(:title, :body, :image)
   end
 end
