@@ -28,6 +28,12 @@ class ListsController < ApplicationController
     redirect_to lists_path
   end
 
+  def destroy
+    list = List.find(params[:id])  # データ（レコード）を1件取得
+    list.destroy  # データ（レコード）を削除
+    redirect_to '/lists'  # 投稿一覧画面へリダイレクト  
+  end
+
   private
   # privateは一種の境界線で、ここから下はこのcontrollerの中でしか呼び出せませんの意味
   # privateメソッドの名前は、「モデル名_params」とすることが多いです
