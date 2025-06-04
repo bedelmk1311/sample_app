@@ -4,16 +4,19 @@
 
 Rails.application.routes.draw do
   get 'homes/top'
-  get 'lists/new'
-  # get 'lists/index'
-  get 'lists' => 'lists#index'
-  # get 'lists/show'
-  get 'lists/:id' => 'lists#show'
-  # get 'lists/edit'
-  get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
-  # 名前付きルート（as: 'edit_list'）の記述を定義
-  patch 'lists/:id' => 'lists#update', as: 'update_list'
-  post 'lists' => 'lists#create'
-  delete 'lists/:id' => 'lists#destroy', as: 'destroy_list'
+  # get 'lists/new'
+  # # get 'lists/index'
+  # get 'lists' => 'lists#index'
+  # # get 'lists/show'
+  # get 'lists/:id' => 'lists#show'
+  # # get 'lists/edit'
+  # get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
+  # # 名前付きルート（as: 'edit_list'）の記述を定義
+  # patch 'lists/:id' => 'lists#update', as: 'update_list'
+  # post 'lists' => 'lists#create'
+  # delete 'lists/:id' => 'lists#destroy', as: 'destroy_list'
+
+  resources :lists
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
