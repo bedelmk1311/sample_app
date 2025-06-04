@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'lists' => 'lists#index'
   # get 'lists/show'
   get 'lists/:id' => 'lists#show'
-  get 'lists/edit'
+  # get 'lists/edit'
+  get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
+  # 名前付きルート（as: 'edit_list'）の記述を定義
 
   post 'lists' => 'lists#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
