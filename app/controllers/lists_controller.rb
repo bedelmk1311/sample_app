@@ -22,6 +22,12 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
+  def update
+    list = List.find(params[:id])
+    list.update(list_params)
+    redirect_to lists_path
+  end
+
   private
   # privateは一種の境界線で、ここから下はこのcontrollerの中でしか呼び出せませんの意味
   # privateメソッドの名前は、「モデル名_params」とすることが多いです
