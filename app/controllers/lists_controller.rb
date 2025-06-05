@@ -4,10 +4,13 @@ class ListsController < ApplicationController
   end
 
   def create
-    list = List.new(list_params)
-    list.save
-    # redirect_to homes_top_path
-    redirect_to list_path(list.id)
+    @list = List.new(list_params)
+    if @list.save
+      redirect_to list_path(@list.id)
+    else
+      render :new
+      # render :同じコントローラ内の別アクションのViewを表示
+    end
   end
 
   def index
