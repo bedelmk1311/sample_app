@@ -82,10 +82,18 @@ main {
 }
 
 .list-body {
+  display: block; /*1つの要素で1行を占め、親要素の幅いっぱいに広がる*/
   color: gray;
   font-size: 12px;
+  overflow: hidden; 
+  white-space: nowrap; /*テキストを折り返し表示させないようにする*/
+  text-overflow: ellipsis; /*領域をはみ出したテキストを...で省略表示する*/
 }
 
 .list-title {
+  display: block;
   font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
