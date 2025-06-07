@@ -12,7 +12,7 @@ class ListsController < ApplicationController
       # flash.nowでフラッシュメッセージを定義する
       # renderとセットで使われることが多い
       # flashだとメッセージが残り続ける
-      flash.now[:notice] = "投稿に失敗しました。"
+      flash.now[:alert] = "投稿に失敗しました。" #CSS用にキーをalertに変更
       render :new
       # render :同じコントローラ内の別アクションのViewを表示
     end
