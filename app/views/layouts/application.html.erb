@@ -32,6 +32,16 @@
     </nav>
 
     <main>
+      <!--フラッシュメッセージ-->
+      <!--%= flash[:notice] %--> <!--汎用性を高くするため下に変更-->
+
+      <% flash.each do |message_type, message| %>
+        <!--取り出したキーをmessage_type、値をmessageにそれぞれ代入-->
+        <div class="flash-message <%= message_type %>">
+          <%= message %>
+        </div>
+
+        <% end %>
       <%= yield %>
     </main>
 
